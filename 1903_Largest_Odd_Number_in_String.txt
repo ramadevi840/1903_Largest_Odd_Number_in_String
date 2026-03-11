@@ -1,0 +1,41 @@
+class Solution {
+    public String largestOddNumber(String num) {
+        int n=num.length();
+        // TC-O(N) SC=O(1)
+        for(int i=n-1;i>=0;i--){
+            int c=num.charAt(i);
+            if((c-'0')%2!=0){
+                return num.substring(0,i+1);
+            }
+        }
+       return "";
+    }
+}
+
+  // TC-O(N2) SC=O(N)
+//  static int intconv(String s){
+//         int res=Integer.parseInt(s);
+//         return res;
+//     }
+//     // here i wrote brute force
+//     public String largestOddNumber(String num) {
+//         int n=num.length();
+       
+//         int max=-1; // for checking max odd number
+//          for(int i=0;i<n;i++){
+//             StringBuilder sb= new StringBuilder();// creates evry time new sb
+//             for(int j=i;j<n;j++){
+//                  char c= num.charAt(j);
+//                  sb.append(c);// appending into sb next convert into integer using parseInt
+//                  int b=intconv(sb.toString());
+//                  //  here checking if converted num is greater or not and odd or even 
+//                  if(b%2!=0 && b>max){
+//                     max=b;
+//                  }
+//             }
+//          }
+//          String s="";
+//          if(max==-1){
+//             return s;
+//          }
+//          return Integer.toString(max);
